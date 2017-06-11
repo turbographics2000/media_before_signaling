@@ -59,11 +59,7 @@ function start(remoteId) {
             // Render the media even before ontrack fires.
             remoteView.srcObject = remoteStream;
         })
-        .catch(logError);
-}
-
-function logError(error) {
-    log(error.name + ": " + error.message);
+        .catch(ex => console.log('gUM error', ex));
 }
 
 function socketSetup() {
