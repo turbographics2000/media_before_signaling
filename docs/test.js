@@ -8,7 +8,7 @@ fetch(`https://skyway.io/${apiKey}/id?ts=${Date.now()}${Math.random()}`).then(re
     myIdDisp.textContent = myId = id;
     socket = new WebSocket(`wss://skyway.io/peerjs?key=${apiKey}&id=${myId}&token=${token}`);
     socketSetup(socket);
-    btnStart.style.style.display = '';
+    btnStart.style.display = '';
 });
 
 btnStart.onclick = evt => {
