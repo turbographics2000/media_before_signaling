@@ -53,7 +53,7 @@ function start(remoteId) {
             //var audioSender = pc.addTrack(stream.getAudioTracks()[0], stream);
             var videoSender = pc.addTrack(stream.getVideoTracks()[0], stream);
             //[audioSender, videoSender].forEach(sender => {
-                remoteStream.addTrack(pc.getReceivers.find(receive => receiver.mid === sender.mid).track);
+                remoteStream.addTrack(pc.getReceivers().find(receive => receiver.mid === sender.mid).track);
             //});
 
             // Render the media even before ontrack fires.
