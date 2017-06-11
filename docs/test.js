@@ -8,10 +8,11 @@ fetch(`https://skyway.io/${apiKey}/id?ts=${Date.now()}${Math.random()}`).then(re
     myIdDisp.textContent = myId = id;
     socket = new WebSocket(`wss://skyway.io/peerjs?key=${apiKey}&id=${myId}&token=${token}`);
     socketSetup(socket);
+    btnStart.style.style.display = '';
 });
 
-btnAddStream.onclick = evt => {
-    if (!pc) start(callTo.value);
+btnStart.onclick = evt => {
+    if (!pc && callTo.value) start(callTo.value);
 }
 
 // call start() to initiate
