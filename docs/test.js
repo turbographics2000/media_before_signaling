@@ -148,10 +148,8 @@ function pcSetup(remoteId) {
     }
     if ('ontrack' in pc) {
         pc.ontrack = function (evt) {
-            if (evt.track.kind === 'video') {
-                evt.streams.forEach(stream => {
-                    createVideoElm(remoteViewContainer, stream);
-                })
+            if (!remoteView.srcObject) {
+                remoteView.srcObject = evt.streams[0];
             }
         }
     } else {
